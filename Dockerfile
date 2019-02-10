@@ -6,7 +6,7 @@ MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # OPSVIEW
 ADD conf/opsview.repo /etc/yum.repos.d/opsview.repo
-RUN rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm && rm -f rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm \
+RUN rpm -ivh http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm && rm -f rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm \
  && yum update -y ; yum install -y opsview perl-DBIx-Class python-setuptools  \
  && service mysqld start && mysqladmin -u root password 'opsview' \
  && sed -i 's/changeme/opsview/g' /usr/local/nagios/etc/opsview.conf \
